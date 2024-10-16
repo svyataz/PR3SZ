@@ -3,6 +3,8 @@ import pandas as pd
 
 class inspection :
     def __init__(self):
+        self.__ans = None
+        self.__s = None
         self.__answers = []
         self.__ddb = pd.read_csv("C:/Users/svyat/Desktop/тестирование/PR3SZ/main.csv")
     
@@ -18,6 +20,12 @@ class inspection :
     def ans_getter(self):
         return  self.__ans
     
+    def s_setter(self, news):
+        self.__s = news
+
+    def s_getter(self):
+        return  self.__s
+    
     def ansInput(self):
         self.__s = self.__ddb.head(1).transpose().loc[self.__ddb.iloc[0] == 1].index[0]
         print("do you have", self.__s[self.__s.find('_') + 1:], "?(y/n):", end="")
@@ -31,6 +39,7 @@ class inspection :
             self.__ddb = self.__ddb[self.__ddb[self.__s] == 1]
         else:
             self.__ddb = self.__ddb[self.__ddb[self.__s] == 0]
+        return False
     
     def loop(self):
         if (len(self.__ddb.columns) > 1 and len(self.__ddb) > 1):
