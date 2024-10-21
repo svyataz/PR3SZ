@@ -12,7 +12,8 @@ class inspectionTest(unittest.TestCase):
             self.assertEqual(fake_out.getvalue().strip(), myOut)
 
     def test_ally(self):
-        self.inputTest(['y', 'y', 'y', 'y'], 'Diagnosis:hypertensive disease',
+        self.inputTest(['y', 'y', 'y', 'y'],
+                       'Diagnosis:hypertensive disease',
                        "do you have shortness of breath ?(y/n):"
                        "do you have palpitation ?(y/n):"
                        "do you have pain chest ?(y/n):"
@@ -20,7 +21,8 @@ class inspectionTest(unittest.TestCase):
                        )
 
     def test_asthma(self):
-        self.inputTest(['y', 'n', 'n', 'y', 'n', 'y', 'y'], 'Diagnosis:asthma',
+        self.inputTest(['y', 'n', 'n', 'y', 'n', 'y', 'y'],
+                       'Diagnosis:asthma',
                        'do you have shortness of breath ?(y/n):'
                        'do you have palpitation ?(y/n):'
                        'do you have unresponsiveness ?(y/n):'
@@ -31,7 +33,8 @@ class inspectionTest(unittest.TestCase):
                        )
 
     def test_missinput(self):
-        self.inputTest(['y', 'something', 'y', 'y', 'y'], 'Diagnosis:hypertensive disease',
+        self.inputTest(['y', 'something', 'y', 'y', 'y'],
+                       'Diagnosis:hypertensive disease',
                        'do you have shortness of breath ?(y/n):'
                        'do you have palpitation ?(y/n):'
                        'incorrect answer\n'
