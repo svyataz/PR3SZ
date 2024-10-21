@@ -22,4 +22,4 @@ def step_out(context, expected_output):
     else:
         assert not(len(context.game_inst.ddb_getter().columns) > 1
                 and len(context.game_inst.ddb_getter()) > 1)
-        assert context.game_inst.final() == expected_outp
+        assert context.game_inst.final() == expected_output
