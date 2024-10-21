@@ -58,5 +58,5 @@ class inspection :
             return "You are healthy"
         return "Diagnosis:" + self.__ddb.iloc[0]['label'][self.__s.find('_') + 1:]
 
-game_inst = inspection()
-print(game_inst.startInspection())
+'''game_inst = inspection()
+print(game_inst.startInspection())'''
