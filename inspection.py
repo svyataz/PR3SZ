@@ -42,21 +42,21 @@ class inspection :
         return False
     
     def loop(self):
-        if (len(self.__ddb.columns) > 1 and len(self.__ddb) > 1):
             self.ansInput()
             if(self.ans_check()): 
                 self.startInspection()
                 return None
             self.__ddb = self.__ddb.drop(self.__s, axis=1)
             self.__answers.append(self.__ans)
-        else: return None
-        self.loop()
-   
-    def startInspection (self):
-        self.loop()
+    def answer(self):
         if not('y' in self.__answers):
             return "You are healthy"
         return "Diagnosis:" + self.__ddb.iloc[0]['label'][self.__s.find('_') + 1:]
+
+    def startInspection (self):
+        while (len(self.__ddb.columns) > 1 and len(self.__ddb) > 1):
+            self.loop()
+        self.answer()
 
 '''game_inst = inspection()
 print(game_inst.startInspection())'''
