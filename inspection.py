@@ -48,6 +48,7 @@ class inspection :
                 return None
             self.__ddb = self.__ddb.drop(self.__s, axis=1)
             self.__answers.append(self.__ans)
+
     def answer(self):
         if not('y' in self.__answers):
             return "You are healthy"
@@ -56,7 +57,7 @@ class inspection :
     def startInspection (self):
         while (len(self.__ddb.columns) > 1 and len(self.__ddb) > 1):
             self.loop()
-        self.answer()
+        return self.answer()
 
 '''game_inst = inspection()
 print(game_inst.startInspection())'''
