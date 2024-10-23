@@ -1,6 +1,4 @@
 from behave import *
-from sympy import false
-
 from inspection import inspection
 
 @given('I start diagnostics')
